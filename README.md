@@ -22,3 +22,6 @@ The project is only written in Portuguese. The GUI consists of 3 panels:
  - **Simulation**: displays the motion of the masses and allows the user to control the speed of simulation and collision with wall.
  - **System parameters and Initial conditions**: allows the user to control the physical parameters of the masses and springs and set the initial conditions of the motion.
 
+Here is a screenshot of the program.
+
+![Screenshot of simulation GUI](./physical_simulation.png)
