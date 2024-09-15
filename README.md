@@ -7,7 +7,7 @@ This was one of my first programming projects. It is a simulation of a physical 
 To build the project, you need to install a ***C compiler*** and the ***GTK3+ library***. There are plenty of tutorials regarding the installation of a C compiler. For the GTK3+ library, follow the instructions in [the GTK project](https://www.gtk.org/docs/installations/).
 
 > [!IMPORTANT]
-> The current stable GTK library is 4.0. However, ==GTK4 lacks backwards compatibility in major updates==. To ensure that the project builds, I advise the installation of a GTK 3.x library.
+> The current stable GTK library is 4.0. However, <mark>GTK4 lacks backwards compatibility in major updates</mark>. To ensure that the project builds, I advise the installation of a GTK 3.x library.
 
 ## Run
 
