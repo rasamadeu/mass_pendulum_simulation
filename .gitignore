@@ -1,0 +1,4 @@
+# Object and executable files
+./*.o
+./projecto
+
