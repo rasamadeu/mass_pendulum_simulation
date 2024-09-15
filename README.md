@@ -11,5 +11,5 @@ To build the project, you need to install a ***C compiler*** and the ***GTK3+ li
 
 ## Run
 
-To build the project, type 'make' in a terminal.
-To run, just type './projecto' in the terminal and the GUI will open up!
+To build the project, type `make` in a terminal.
+To run, just type `./projecto` in the terminal and the GUI will open up!
