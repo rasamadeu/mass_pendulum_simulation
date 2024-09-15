@@ -1,0 +1,11 @@
+#!/bin/bash
+gcc -Wall -g -ggdb `pkg-config --cflags --libs gtk+-4.0` -c $1.c
+
+if [ $# -eq 2 ];
+   then
+	gcc -Wall -g -ggdb `pkg-config --cflags --libs gtk+-4.0` -c $2.c
+   	gcc -Wall -g -ggdb -o $1 $1.o $2.o `pkg-config --libs gtk+-4.0` -lm
+   else
+	gcc -Wall -g -ggdb -o $1 $1.o `pkg-config --libs gtk+-4.0` -lm
+fi
+

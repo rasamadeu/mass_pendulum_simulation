@@ -1,0 +1,96 @@
+\documentclass[a4paper]{article} 
+\usepackage{bold-extra}
+
+\usepackage{comment}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage[utf8]{inputenc}
+\usepackage[portuguese]{babel}  
+\usepackage[tmargin=2cm,bmargin=1.8cm, hmargin=0.8in]{geometry}
+\usepackage{indentfirst}
+\usepackage{abstract}
+\usepackage{sectsty}
+\usepackage{booktabs}
+\usepackage{floatrow}
+\usepackage{tabularx}
+\usepackage{changepage}
+\usepackage{multirow}
+\usepackage{microtype}
+\usepackage{vwcol}
+\usepackage{enumerate} 
+\usepackage{esvect} 
+\usepackage{siunitx}
+\usepackage{caption}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{subfigure}
+\usepackage{bold-extra}
+\usepackage{titlesec}
+\usepackage{secdot}
+\usepackage{verbatim}
+\usepackage{commath}
+\usepackage[T1]{fontenc}
+\floatsetup[table]{capposition=top}
+\sectionfont{\large\sc\selectfont}
+\subsectionfont{\hspace{0.2mm}\fontsize{10}{10}\sc\selectfont}
+\long\def\/*#1*/{}
+\setlength{\skip\footins}{1cm}
+\newcommand*{\sectionformat}{\centering}
+
+\setcounter{secnumdepth}{0}
+% ESTE FICHEIRO FOI ESCRITO NO SITE SHARELATEX.COM
+\begin{document}
+\renewcommand\thesubsection{\Alpha.{subsection}}
+
+\title{\bf\LARGE{\vspace{-19mm} Manual do Projecto Final}\vspace{-1.5mm}}
+\author{{ {Ricardo Amadeu (83853)} {Tomé Santos (90429)}} \vspace{1mm}\\\textit{\small{Instituto Superior Técnico}}\vspace{-1mm}\\ \textit{\small{Mestrado Integrado em Engenharia Física Tecnológica}}\vspace{-1mm}
+\\ \textit{\small{Programação}}\vspace{-1mm}
+\date{\normalsize{1º Semestre 2017/2018}}}
+
+\maketitle
+
+\vspace{-6mm}
+\renewcommand{\abstractname}{Resumo}
+\begin{abstract} \vspace{-1mm}
+
+\par \bf Este documento apresenta uma descrição breve do projecto realizado no âmbito da Unidade Curricular de Programação no Instituto Superior Técnico, desenvolvido em linguagem de programação C em ambiente de janelas com recurso à biblioteca GTK+. Este manual tem como principal objectivo a explicação das funcionalidades e potencialidades do programa, não sendo explicado exaustivamente o código do mesmo. O projecto consiste num programa que permite ao utilizador a visualização de uma simulação do movimento dum sistema de duas molas e um pêndulo. Neste texto encontram-se referidas as componentes constituintes da GUI (\textit{Graphical User Interface}) que permitem a interação do utilizador com o programa, bem como as suas principais funcionalidades.
+
+\end{abstract}
+
+\vspace{2mm}
+\section{\bf A. Introdução}
+\par O programa desenvolvido possui várias componentes, sendo que umas permitem ao utilizador a introdução de dados ou a manipulação das tarefas a executar pelo programa (\textit{input}), enquanto que outras têm como objectivo a visualização da informação processada pelo programa (\textit{output}). A janela apresentada ao utilizador (fig.1) apresenta-se organizada em três secções: 
+\begin{itemize}
+\item Gráficos: responsável pela escolha e apresentação de gráficos em tempo real que mostram as variáveis do movimento em função do tempo ou a posição de uma das massas em função do ângulo que o pêndulo faz com a vertical;
+\item Simulação do Movimento: possibilita a visualização gráfica do movimento em questão e apresenta funcionalidades que permitem o controlo da velocidade da simulação e de condições fronteira do sistema;
+\item Grandezas Físicas e Condições Iniciais: painel de controlo que permite a alteração das grandezas físicas e das condições iniciais do sistema, apresentando também botões que permitem iniciar/parar a simulação, aplicar as alterações nas condições iniciais e de reset.
+\end{itemize}
+\vspace{2mm}
+
+\begin{figure}[H]
+\caption{Janela do programa}
+\begin{center}
+\includegraphics[scale = 0.4]{janela.png}
+\end{center}
+\end{figure}
+\clearpage 
+\section{\bf B. Secções e funcionalidades}
+\par Nos subcapítulos seguintes encontra-se uma explicação mais elaborada sobre cada uma das secções referidas na secção anterior. Os componentes referidos de seguida foram dispostos em várias \textit{boxes} e \textit{frames} de modo a melhorar o aspecto e organização da janela.
+\subsection{ B.1. Gráficos}
+\par Esta secção é constituída por duas partes iguais, sendo cada uma constituída por uma \textit{combo box}, que permite a visualização do gráfico pretendido, um \textit{spin button} que permite alterar o valor da menor divisão da escala, um \textit{button} que permite aplicar o valor do \textit{spin button} na escala do gráfico e uma \textit{drawing area} que desenha o gráfico pretendido. A \textit{combo box} altera os valores atual e limites permitidos pelo \textit{spin button} do respectivo gráfico. As escalas referentes ao ângulo de desvio do pêndulo com a vertical são fixos, uma vez que $\theta$ pertence ao intervalo $[ -\pi , +\pi ]$, e as unidades das escalas são alteradas automaticamente. Nos gráficos que apresentam as variáveis do movimento em função do tempo é apresentada no eixo horizontal uma escala de tempo, desde que o utilizador não altere a velocidade da simulação.
+
+\subsection{ B.2. Simulação do Movimento}
+\par Esta secção é constituída por uma  \textit{drawing area} que apresenta a simulação do movimento. Para além disto, contém dois \textit{buttons} que aceleram ou abrandam a simulação, sendo os valores possíveis para a velocidade desta $\times 0.01, \times0.1, \times1$ ou $\times10$ da velocidade em tempo real. Possui também um \textit{toggle button} que controla a sensibilidade dos botões anteriormente referidos. Ao iniciar a simulação, o valor deste botão por \textit{default} é \textbf{disabled}, de modo a permitir a visualização da escala do tempo nos gráficos. Caso se ative o respectivo botão, esta funcionalidade é bloqueada de modo a impedir a apresentação de dados incorretos ao utilizador (programa não se encontra preparado para lidar com esta situação). A informação respeitante à velocidade de simulação é apresentada num \textit{label}. 
+\par Esta secção apresenta uma funcionalidade extra, um \textit{toggle button} que permite ativar/desativar a colisão da massa retangular com os extremos da mola. Esta funcionalidade é susceptível a erros de cálculo internos ao programa, pelo que tem um mecanismo de segurança. Este mecanismo, caso o botão esteja ativado, desativa-o se a massa retangular ultrapassar determinadas posições extremas, e impede que o botão seja ativado nestas mesmas condições extraordinárias.
+
+\subsection{ B.3. Grandezas Físicas e Condições Iniciais}
+\par Esta secção é constituída por duas \textit{frames}, sendo estas tituladas "Grandezas Físicas" e "Condições Iniciais", cada uma contendo \textit{spin buttons} que permitem a alteração das grandezas físicas e das condições iniciais do sistema. As alterações das grandezas físicas são realizadas em tempo real, sendo estas visíveis na \textit{drawing area} que apresenta a simulação do movimento, enquanto que as das condições iniciais são induzidas em tempo real apenas durante a pausa da simulação ou premindo no \textit{button} "Aplicar", que tem o \textit{shortcut} "ALT-P". Para voltar ao estado inicial do programa, basta clicar no \textit{button} "Reset".
+\par O \textit{button} "Iniciar/Pausar" tem algumas funcionalidades: ao parar, os gráficos ficam parados, permite parar a simulação em qualquer instante, mesmo com condições do movimento extremas e permite alterar a velocidade da simulação; ao iniciar, os gráficos reiniciam, a informação dos \textit{spin buttons} é registada internamente e desativa o \textit{toggle button} que permite alterar a velocidade da simulação.
+
+\section{\bf  Referências}
+
+  \bibitem{notes} [1] Samuel Eleutério (2015). {\em Algumas Notas Básicas sobre \LaTeX}
+  
+\end{document}
