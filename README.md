@@ -16,7 +16,7 @@ To run, just type `./projecto` in the terminal and the GUI will open up!
 
 ## GUI
 
-The project is only written in Portuguese. The GUI consists of 3 panels:
+The project is only written in Portuguese. The manual_projecto.pdf is a manual about the program written in Portuguese. The GUI consists of 3 panels:
  - **Plots**: displays two real-time plots of the motion. You can choose from a variety of
                     coordinates to display.
  - **Simulation**: displays the motion of the masses and allows the user to control the speed of simulation and collision with wall.
