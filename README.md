@@ -25,3 +25,7 @@ The project is only written in Portuguese. The GUI consists of 3 panels:
 Here is a screenshot of the program.
 
 ![Screenshot of simulation GUI](./physical_simulation.png)
+
+## Issues
+
+There are still some issues with the program. However, these are not critical for the correct function of the simulation. I still have to correct some CSS and a small memory leak.
