@@ -13,3 +13,12 @@ To build the project, you need to install a ***C compiler*** and the ***GTK3+ li
 
 To build the project, type `make` in a terminal.
 To run, just type `./projecto` in the terminal and the GUI will open up!
+
+## GUI
+
+The project is only written in Portuguese. The GUI consists of 3 panels:
+ - **Plots**: displays two real-time plots of the motion. You can choose from a variety of
+                    coordinates to display.
+ - **Simulation**: displays the motion of the masses and allows the user to control the speed of simulation and collision with wall.
+ - **System parameters and Initial conditions**: allows the user to control the physical parameters of the masses and springs and set the initial conditions of the motion.
+
